@@ -28,4 +28,8 @@ indexRouter.get('/', (req, res) => {
   res.render('index', { messages });
 });
 
+indexRouter.post('/new', (req, res) => {
+  console.log(req.body);
+});
+
 module.exports = indexRouter;

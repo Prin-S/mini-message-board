@@ -7,6 +7,10 @@ const indexRouter = require('./routes/indexRouter');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+// https://expressjs.com/en/api.html#express.urlencoded
+// So that "A new `body` object containing the parsed data is populated on the `request` object after the middleware (i.e. `req.body`)"
+app.use(express.urlencoded({ extended: true }));
+
 app.use('/new', newMessageRouter);
 app.use('/', indexRouter);
 
