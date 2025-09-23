@@ -1,9 +1,10 @@
 const express = require('express');
 const app = express();
+const newMessageRouter = require('./routes/newMessageRouter');
+const indexRouter = require('./routes/indexRouter');
 
-app.get('/', (req,res) => {
-  res.send('test');
-});
+app.use('/new', newMessageRouter);
+app.use('/', indexRouter);
 
 const PORT = process.env.PORT || 9000;
 
