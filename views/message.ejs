@@ -7,7 +7,7 @@
   </head>
   <body>
     <%- include('navbar', { links }) %>
-    <h1>All messages</h1>
+    <h1>Message <%= msgId %></h1>
     <div>
       <% messages.forEach(message => { 
         if (message.id == msgId) { %>
