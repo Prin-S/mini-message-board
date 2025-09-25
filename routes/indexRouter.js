@@ -1,5 +1,6 @@
 const express = require('express');
 const indexRouter = express.Router();
+const links = require('../links');
 
 const messages = [
   {
@@ -25,12 +26,12 @@ const messages = [
 ];
 
 indexRouter.get('/', (req, res) => {
-  res.render('index', { messages });
+  res.render('index', { links, messages });
 });
 
 indexRouter.post('/new', (req, res) => {
   messages.push({ text: req.body.message, user: req.body.name, added: new Date() });
-  res.redirect('/');
+  res.redirect('/'); // Return to home after submitting the form.
 });
 
 module.exports = indexRouter;

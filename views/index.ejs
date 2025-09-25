@@ -6,6 +6,8 @@
     <title>Home</title>
   </head>
   <body>
+    <%- include('navbar', { links }) %>
+    <h1>All messages</h1>
     <div>
       <% messages.forEach(message => { %>
         <p>
@@ -15,5 +17,6 @@
         </p>
       <% }); %>
     </div>
+    <%- include('footer') %>
   </body>
 </html>

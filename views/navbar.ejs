@@ -1,0 +1,9 @@
+<nav>
+  <div>
+    <% links.forEach(element => { %>
+      <a href="<%= element.href %>">
+        <button class="button"><%= element.text %></button>
+      </a>
+    <% }) %>
+  </div>
+</nav>
