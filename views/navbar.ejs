@@ -1,8 +1,8 @@
 <nav>
   <div>
-    <% links.forEach(element => { %>
-      <a href="<%= element.href %>">
-        <button class="button"><%= element.text %></button>
+    <% links.forEach(link => { %>
+      <a href="<%= link.href %>">
+        <button class="button"><%= link.text %></button>
       </a>
     <% }) %>
   </div>

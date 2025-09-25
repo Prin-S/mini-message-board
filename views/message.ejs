@@ -3,19 +3,25 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Message <%= msgId %></title>
   </head>
   <body>
     <%- include('navbar', { links }) %>
     <h1>All messages</h1>
     <div>
-      <% messages.forEach(message => { %>
+      <% messages.forEach(message => { 
+        if (message.id == msgId) { %>
         <p>
           <p><%= message.user %></p>
           <p><%= message.added.toLocaleString('en-GB') %></p>
-          <p><a href="/<%= message.id %>">Open</a></p>
+          <p><%= message.text %></p>
         </p>
-      <% }); %>
+      <% }}); %>
+    </div>
+    <div>
+      <a href="/">
+        <button class="button">Back</button>
+      </a>
     </div>
     <%- include('footer') %>
   </body>
