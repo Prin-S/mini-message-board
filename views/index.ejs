@@ -3,18 +3,19 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css" />
     <title>Home</title>
   </head>
   <body>
     <%- include('navbar', { links }) %>
     <h1>All messages</h1>
-    <div>
+    <div class="container">
       <% messages.forEach(message => { %>
-        <p>
+        <div class="box">
           <p><%= message.user %></p>
           <p><%= message.added.toLocaleString('en-GB') %></p>
           <p><a href="/<%= message.id %>">Open</a></p>
-        </p>
+        </div>
       <% }); %>
     </div>
     <%- include('footer') %>

@@ -3,22 +3,21 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css" />
     <title>Message <%= msgId %></title>
   </head>
   <body>
     <%- include('navbar', { links }) %>
     <h1>Message <%= msgId %></h1>
-    <div>
+    <div class="container container-full">
       <% messages.forEach(message => { 
         if (message.id == msgId) { %>
-        <p>
+        <div class="box">
           <p><%= message.user %></p>
           <p><%= message.added.toLocaleString('en-GB') %></p>
           <p><%= message.text %></p>
-        </p>
+        </div>
       <% }}); %>
-    </div>
-    <div>
       <a href="/">
         <button class="button">Back</button>
       </a>
