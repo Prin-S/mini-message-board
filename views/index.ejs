@@ -14,7 +14,7 @@
         <div class="box">
           <h3><%= message.user %></h3>
           <p><%= message.added.toLocaleString('en-GB') %></p>
-          <p><a href="/<%= message.id %>">Open</a></p>
+          <p><a href="/message/<%= message.id %>">Open</a></p>
         </div>
       <% }); %>
     </div>

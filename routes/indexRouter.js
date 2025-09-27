@@ -41,8 +41,13 @@ indexRouter.post('/new', (req, res) => {
   res.redirect('/'); // Return to home after submitting the form.
 });
 
-indexRouter.get('/:id', (req, res) => {
+indexRouter.get('/message/:id', (req, res) => {
   const msgId = req.params.id
+
+  if (!messages.find(message => message.id == msgId)) {
+    throw new Error('Message');
+  }
+
   res.render('message', { msgId, links, messages });
 });
 
