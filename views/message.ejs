@@ -13,7 +13,7 @@
       <% messages.forEach(message => { 
         if (message.id == msgId) { %>
         <div class="box">
-          <p><%= message.user %></p>
+          <h3><%= message.user %></h3>
           <p><%= message.added.toLocaleString('en-GB') %></p>
           <p><%= message.text %></p>
         </div>

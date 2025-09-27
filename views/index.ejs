@@ -12,7 +12,7 @@
     <div class="container">
       <% messages.forEach(message => { %>
         <div class="box">
-          <p><%= message.user %></p>
+          <h3><%= message.user %></h3>
           <p><%= message.added.toLocaleString('en-GB') %></p>
           <p><a href="/<%= message.id %>">Open</a></p>
         </div>
